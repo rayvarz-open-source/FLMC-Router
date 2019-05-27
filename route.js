@@ -8,7 +8,7 @@ export class Route {
     path;
     originalPath;
     rootPath;
-    parameters;
+    params;
 
     //lifecycle methods
     onEnter;        //click on link or call go method
