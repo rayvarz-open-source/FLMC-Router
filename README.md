@@ -1,8 +1,7 @@
 # FLMC-Router
-javascript router (Client-side)
+simple javascript router (Client-side)
 
 
-Example Router :
 
 ```html
 <html>
@@ -32,4 +31,20 @@ Example Router :
         <a href="#agasdfasdfasdf">404</a>
     </body>
 </html>
+```
+route.config
+```javascript
+const routeList = [
+    new Route({
+        path: 'user/add',
+        controller : (path,params) => {
+            console.log(path)
+        }
+      }),new Route({
+        path: 'user/update',
+        controller : (path,params) => {
+          console.log(path)
+        }
+      })
+    ];
 ```
