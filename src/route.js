@@ -29,7 +29,7 @@ class Route {
     __initFromUrl(){
         try{
 
-            this.hash = Base64.decode(window.location.hash.substring(1));
+            this.hash = atob(window.location.hash.substring(1));
             var routeObject = JSON.parse(this.hash);
             
             this.path= routeObject.path;
@@ -43,13 +43,13 @@ class Route {
 
     __setHash(hash){
         this.hash = hash;
-        var routeObject = JSON.parse(Base64.decode(this.hash));
+        var routeObject = JSON.parse(atob(this.hash));
         this.path= routeObject.path;
         this.params= routeObject.params;
     }
 
     encode(){
-        return Base64.encode(JSON.stringify(this));
+        return btoa(JSON.stringify(this));
     }
 
     test(){

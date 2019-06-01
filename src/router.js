@@ -1,15 +1,18 @@
-function onRoutChange(hash,path){
-    var route = new Route();
-    if(hash === undefined) {
-      route.__initFromUrl();
-    } else {
-      route.__setHash(hash)
+function onRoutChange(props){
+  var route = new Route();
+  if(props === undefined){
+    route.__initFromUrl();
+  } else {
+    if(props.hash != undefined) {
+      route.__setHash(props.hash);
     }
-
-    if(path != undefined){
-        route.path = path;
+    if(props.path != undefined) {
+      route.path = props.path;
     }
-
+    if(props.params != undefined) {
+      route.params = props.params;
+    }
+  }
     routeList.forEach(element => {
       if(element.path == route.path){
         element.controller(element.path,route.params);
