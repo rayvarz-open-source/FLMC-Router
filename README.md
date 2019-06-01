@@ -1,56 +1,35 @@
 # FLMC-Router
-javascript router (Client-side) [powered by director]
+javascript router (Client-side)
 
 
 Example Router :
 
-```javascript
-import React from 'react';
-
-//models
-import {Route} from 'Route';
-
-//data controller
-import Home from 'controller/Home';
-import Document from 'controller/Document';
-import Gallery from 'controller/Gallery';
-import Other from 'controller/Other';
-//context is a global module 
-
-const router = {
-    home: new Route({
-        path: '/',
-        controller: Home
-      }),
-    document: new Route({
-        path: '/document/:id',
-        controller: Document,
-        beforeEnter: (router, params, context) => {
-          const userIsLoggedIn = context.app.user;
-          if (!userIsLoggedIn) {
-            alert('Only logged in users can enter this route!');
-            return false;
-          }
-        },
-        onEnter: (router, params) => {
-          console.log(`entering document with params`, params);
+```html
+<html>
+    <header>
+        <script src="../src/base64.js"></script>
+        <script src="../src/route.js"></script>
+        <script src="route.config.js"></script>
+        <script src="../src/router.js"></script>
+        <script>
+        window.onload = function(){
+            //onRoutChange called directly - ignore init by url
+            onRoutChange('eyJwYXRoIjoidXNlci9hZGQiLCJwYXJhbXMiOlt7ImlkIjoxMCwidGl0bGUiOiJ0ZXN0In0seyJpZCI6MTEsInRpdGxlIjoidGVzdCJ9XX0=');
         }
-      }),
-    gallery: new Route({
-        path: '/gallery/:id/page/:page', // path: '/gallery?id=:id&page=:page'
-        controller: Gallery,
-        onEnter: (route, params, context) => {
-          console.log(`entering book with params`, params);
-          store.app.setTitle(route.title);
+
+        </script>
+        <style>
+        a {
+            display: block;
+            padding: 10px;
         }
-      }),
-    withPar : new Route({
-        path:'/withPar',
-        controller : Other,
-        params : {id : 1 , title : 'test' , subTitle : context.stm.current.subTitle}, // params : context.stm.current
-        onEnter: (route,params,context) => {
-            context.stm.withPar = params;
-        }
-    })
-};
+        </style>
+    </header>
+    <!-- onRoutChange without parameter - init by url hash -->
+    <body onhashchange="onRoutChange()">
+        <a href="#eyJwYXRoIjoidXNlci9hZGQiLCJwYXJhbXMiOlt7ImlkIjoxMCwidGl0bGUiOiJ0ZXN0In0seyJpZCI6MTEsInRpdGxlIjoidGVzdCJ9XX0=">user/add</a>
+        <a href="#eyJwYXRoIjoidXNlci91cGRhdGUiLCJwYXJhbXMiOlt7ImlkIjoxMCwidGl0bGUiOiJ0ZXN0In0seyJpZCI6MTEsInRpdGxlIjoidGVzdCJ9XX0=">user/update</a>
+        <a href="#agasdfasdfasdf">404</a>
+    </body>
+</html>
 ```
