@@ -1,3 +1,6 @@
+import Route from './route'
+import config from './route.config'
+
 function onRoutChange(props){
   var route = new Route();
   if(props === undefined){
@@ -13,9 +16,11 @@ function onRoutChange(props){
       route.params = props.params;
     }
   }
-    routeList.forEach(element => {
+    new config().routeList.forEach(element => {
       if(element.path == route.path){
         element.controller(element.path,route.params);
       }
     });
 }
+
+export default onRoutChange

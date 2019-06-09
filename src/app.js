@@ -1,1 +1,7 @@
-onRoutChange({hash:'eyJwYXRoIjoidXNlci9hZGQiLCJwYXJhbXMiOlt7ImlkIjoxMCwidGl0bGUiOiJ0ZXN0In0seyJpZCI6MTEsInRpdGxlIjoidGVzdCJ9XX0='});
+import React from 'react';
+
+function App() {
+  return ('');
+}
+
+export default App;
