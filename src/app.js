@@ -1,0 +1,1 @@
+onRoutChange({hash:'eyJwYXRoIjoidXNlci9hZGQiLCJwYXJhbXMiOlt7ImlkIjoxMCwidGl0bGUiOiJ0ZXN0In0seyJpZCI6MTEsInRpdGxlIjoidGVzdCJ9XX0='});
