@@ -1,0 +1,19 @@
+{
+  "name": "flmc-router",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rayvarz-open-source/FLMC-Router.git"
+  },
+  "author": "saeed khorsand",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rayvarz-open-source/FLMC-Router/issues"
+  },
+  "homepage": "https://github.com/rayvarz-open-source/FLMC-Router#readme"
+}
